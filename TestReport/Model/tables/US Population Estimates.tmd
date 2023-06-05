@@ -1,0 +1,1075 @@
+table 'US Population Estimates'
+	lineageTag: b7c3315a-d28b-4922-87da-ae9e669b0d0a
+	ordinal: 1
+
+	partition 'US Population Estimates-5f25fa08-7c7e-4943-9779-3195b3a0fbbd' = M
+		mode: Import
+		expression:=
+			let
+			    Origen = Csv.Document(File.Contents("C:\Users\GonzaloHernandez\OneDrive - Wiring Technologies S.L.U\Documentos\_BORRAR\pbitoolstest\US Population Estimates.csv"),[Delimiter=",", Columns=106, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+			    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+			    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Sex", type text}, {"Origin", type text}, {"Race", type text}, {"Year", Int64.Type}, {"Total Population", Int64.Type}, {"Age 0", Int64.Type}, {"Age 1", Int64.Type}, {"Age 2", Int64.Type}, {"Age 3", Int64.Type}, {"Age 4", Int64.Type}, {"Age 5", Int64.Type}, {"Age 6", Int64.Type}, {"Age 7", Int64.Type}, {"Age 8", Int64.Type}, {"Age 9", Int64.Type}, {"Age 10", Int64.Type}, {"Age 11", Int64.Type}, {"Age 12", Int64.Type}, {"Age 13", Int64.Type}, {"Age 14", Int64.Type}, {"Age 15", Int64.Type}, {"Age 16", Int64.Type}, {"Age 17", Int64.Type}, {"Age 18", Int64.Type}, {"Age 19", Int64.Type}, {"Age 20", Int64.Type}, {"Age 21", Int64.Type}, {"Age 22", Int64.Type}, {"Age 23", Int64.Type}, {"Age 24", Int64.Type}, {"Age 25", Int64.Type}, {"Age 26", Int64.Type}, {"Age 27", Int64.Type}, {"Age 28", Int64.Type}, {"Age 29", Int64.Type}, {"Age 30", Int64.Type}, {"Age 31", Int64.Type}, {"Age 32", Int64.Type}, {"Age 33", Int64.Type}, {"Age 34", Int64.Type}, {"Age 35", Int64.Type}, {"Age 36", Int64.Type}, {"Age 37", Int64.Type}, {"Age 38", Int64.Type}, {"Age 39", Int64.Type}, {"Age 40", Int64.Type}, {"Age 41", Int64.Type}, {"Age 42", Int64.Type}, {"Age 43", Int64.Type}, {"Age 44", Int64.Type}, {"Age 45", Int64.Type}, {"Age 46", Int64.Type}, {"Age 47", Int64.Type}, {"Age 48", Int64.Type}, {"Age 49", Int64.Type}, {"Age 50", Int64.Type}, {"Age 51", Int64.Type}, {"Age 52", Int64.Type}, {"Age 53", Int64.Type}, {"Age 54", Int64.Type}, {"Age 55", Int64.Type}, {"Age 56", Int64.Type}, {"Age 57", Int64.Type}, {"Age 58", Int64.Type}, {"Age 59", Int64.Type}, {"Age 60", Int64.Type}, {"Age 61", Int64.Type}, {"Age 62", Int64.Type}, {"Age 63", Int64.Type}, {"Age 64", Int64.Type}, {"Age 65", Int64.Type}, {"Age 66", Int64.Type}, {"Age 67", Int64.Type}, {"Age 68", Int64.Type}, {"Age 69", Int64.Type}, {"Age 70", Int64.Type}, {"Age 71", Int64.Type}, {"Age 72", Int64.Type}, {"Age 73", Int64.Type}, {"Age 74", Int64.Type}, {"Age 75", Int64.Type}, {"Age 76", Int64.Type}, {"Age 77", Int64.Type}, {"Age 78", Int64.Type}, {"Age 79", Int64.Type}, {"Age 80", Int64.Type}, {"Age 81", Int64.Type}, {"Age 82", Int64.Type}, {"Age 83", Int64.Type}, {"Age 84", Int64.Type}, {"Age 85", Int64.Type}, {"Age 86", Int64.Type}, {"Age 87", Int64.Type}, {"Age 88", Int64.Type}, {"Age 89", Int64.Type}, {"Age 90", Int64.Type}, {"Age 91", Int64.Type}, {"Age 92", Int64.Type}, {"Age 93", Int64.Type}, {"Age 94", Int64.Type}, {"Age 95", Int64.Type}, {"Age 96", Int64.Type}, {"Age 97", Int64.Type}, {"Age 98", Int64.Type}, {"Age 99", Int64.Type}, {"Age 100", Int64.Type}})
+			in
+			    #"Tipo cambiado"
+
+	column Sex
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 0502b824-7ba4-49dc-85b3-82d4abb415ea
+		sourceColumn: Sex
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Origin
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 37818e44-2273-4644-84f7-e215be95dc2d
+		sourceColumn: Origin
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Race
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 2a54c22d-91fa-4c16-af1a-5eb3c7856bb2
+		sourceColumn: Race
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: aa163120-30cc-40f2-8bdf-efaacd06fb8a
+		sourceColumn: Year
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Population'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: c4a316ac-80d2-4d75-ad1a-25a5706c70e4
+		sourceColumn: "Total Population"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 0'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 3bae41fb-2e5a-44a9-964c-845d8cd9b524
+		sourceColumn: "Age 0"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 1'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 2a728199-7788-433e-a475-e4c27d683772
+		sourceColumn: "Age 1"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 2'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 20e411f7-627b-49c0-a79c-c433dd0d8e51
+		sourceColumn: "Age 2"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 3'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 8064489d-2479-4753-aaf4-df9ecf657181
+		sourceColumn: "Age 3"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 4'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 6b364b1d-e778-4a5a-a16b-d467946fed71
+		sourceColumn: "Age 4"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 5'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 06b1142a-22e2-48cb-8890-58b305840621
+		sourceColumn: "Age 5"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 6'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 12f3a18b-645b-44c9-9456-27a389df91b0
+		sourceColumn: "Age 6"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 7'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 2101923c-a2b8-4286-985a-82b4a225c3cc
+		sourceColumn: "Age 7"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 8'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 31c9a39f-cf14-4694-92bb-49d6503dbc61
+		sourceColumn: "Age 8"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 9'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: d19a6184-7317-4d65-9469-8c9afcdd602b
+		sourceColumn: "Age 9"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 10'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 981ed5e4-6c47-42f3-92e1-ca870ce7c7ad
+		sourceColumn: "Age 10"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 11'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: b10d449a-bddd-4a85-93d3-3cc6b230ed8d
+		sourceColumn: "Age 11"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 12'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 09f6680b-78c9-4412-9a39-20a993a72cf1
+		sourceColumn: "Age 12"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 13'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 3722a8e3-580d-46c2-a16e-3c2b0014f8fe
+		sourceColumn: "Age 13"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 14'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 8499b873-9f86-47cb-a9ce-4bff9b5aebb8
+		sourceColumn: "Age 14"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 15'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: ffd46e42-9412-496f-833e-6d885b492fdf
+		sourceColumn: "Age 15"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 16'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 609866b0-cc6a-498c-8a1f-3676861e55d3
+		sourceColumn: "Age 16"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 17'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 012a6776-8a3b-4da5-ac19-67e96d9c1acc
+		sourceColumn: "Age 17"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 18'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 04a06817-028c-49bf-819e-6f9894cc2121
+		sourceColumn: "Age 18"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 19'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: ee934f2e-f916-4705-8aa5-2412fc8eb8f3
+		sourceColumn: "Age 19"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 20'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 00e87937-5876-40a2-9117-b648b8896e1e
+		sourceColumn: "Age 20"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 21'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: bf9b4624-5b85-48e3-bf74-064939a3631d
+		sourceColumn: "Age 21"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 22'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 97ae1de0-4ce9-4762-9589-e95bf82024e5
+		sourceColumn: "Age 22"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 23'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 406d7531-0d3a-4b47-aead-b142d7b57e28
+		sourceColumn: "Age 23"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 24'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 2cee8938-dedc-4e5e-8de4-926a0696183c
+		sourceColumn: "Age 24"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 25'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: a1da7240-26df-46a2-accf-ff7e26dc71bb
+		sourceColumn: "Age 25"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 26'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 5117974f-38b4-4a96-801d-dd811a8cd19f
+		sourceColumn: "Age 26"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 27'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: cd5b3e59-fe3c-4de6-82af-44e8d42dc5d9
+		sourceColumn: "Age 27"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 28'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 4a04986a-c172-42b7-9d96-69aa1c48436a
+		sourceColumn: "Age 28"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 29'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 29ee9d2e-fcfb-471b-8f72-f24844acb510
+		sourceColumn: "Age 29"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 30'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 3cf229c3-7472-4fd9-ba81-383ca49366fc
+		sourceColumn: "Age 30"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 31'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: b291e128-02f9-4668-9646-897bd30cb3d6
+		sourceColumn: "Age 31"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 32'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 884aefd2-fe5d-4c8d-82bb-19cda4ada4ae
+		sourceColumn: "Age 32"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 33'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: d7f7f913-3a9d-497b-97cc-89bcbda91cfb
+		sourceColumn: "Age 33"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 34'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: e8ac1ef1-2b27-416a-a4a1-9eeca3df3472
+		sourceColumn: "Age 34"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 35'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: a2a5d0d5-53de-4f12-9c0c-051ce320c6af
+		sourceColumn: "Age 35"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 36'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: e56becc2-8f1d-4730-a465-cccbb4012cfe
+		sourceColumn: "Age 36"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 37'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 0b214bbf-97a3-4211-89e3-23f5f01d6939
+		sourceColumn: "Age 37"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 38'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: fd94f9a2-ae2a-4780-a55f-2fbb9521417a
+		sourceColumn: "Age 38"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 39'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: cab28939-9691-45c1-aff8-310d829a87ff
+		sourceColumn: "Age 39"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 40'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: adc51bbb-65e7-4691-bf11-7e46b26fc594
+		sourceColumn: "Age 40"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 41'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: a15b287b-c0c7-4c5e-910d-2fb303f8fb1a
+		sourceColumn: "Age 41"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 42'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 1599ccda-dff0-44a5-8532-0d48fafa5a74
+		sourceColumn: "Age 42"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 43'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: c5fee246-8c52-4f9a-b586-fba81559cca7
+		sourceColumn: "Age 43"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 44'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 2219aec8-a63b-41a2-829c-8c2d167285a4
+		sourceColumn: "Age 44"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 45'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 7b9c176f-5b0f-4ee3-89dc-52bdad735f6e
+		sourceColumn: "Age 45"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 46'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 5c35a1b8-7717-4e7c-94ff-3ced3c418952
+		sourceColumn: "Age 46"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 47'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 11d8da55-fa97-4f79-8ae8-63e9274d7649
+		sourceColumn: "Age 47"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 48'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 7f3a21bb-4b46-406b-9f47-cf8ecec827eb
+		sourceColumn: "Age 48"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 49'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: c94e4de8-c97c-45cb-bb55-d556512d7b6c
+		sourceColumn: "Age 49"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 50'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: d6ad19fe-6f9e-49ac-8b4c-d3cf5386e4d5
+		sourceColumn: "Age 50"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 51'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 42e565a4-8ba1-417c-a6ba-105ee601883d
+		sourceColumn: "Age 51"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 52'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: d674ae08-f861-4372-bd69-3c87f98df061
+		sourceColumn: "Age 52"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 53'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 0fb2f860-ddfa-499a-9343-d7b79c3574f5
+		sourceColumn: "Age 53"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 54'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: e8cab788-f08c-426c-9bcc-a3d66f110880
+		sourceColumn: "Age 54"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 55'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: f1c850d0-833d-4440-847e-a5e05c54c590
+		sourceColumn: "Age 55"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 56'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 5a3d4c46-0a80-40a8-8d3b-f766ccc7f5c1
+		sourceColumn: "Age 56"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 57'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 647f539a-c081-47d1-a5b1-60fb3b87f365
+		sourceColumn: "Age 57"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 58'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 5412b4d8-8a3f-4950-9610-0e1cf0bde4dd
+		sourceColumn: "Age 58"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 59'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 9e252baa-d3a6-491e-bf4a-0003756c7ebf
+		sourceColumn: "Age 59"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 60'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: a7aa1dfd-47d5-463f-becf-d44e393709d2
+		sourceColumn: "Age 60"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 61'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: e7e58e73-da6f-418e-9a35-3b9147946ffb
+		sourceColumn: "Age 61"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 62'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: ad8103d4-42af-4fa3-877f-aaca2b0e755e
+		sourceColumn: "Age 62"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 63'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: e7c2314c-454a-48f9-ae37-1799971a6f04
+		sourceColumn: "Age 63"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 64'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 7cd294a6-555c-4174-84e9-e4645a12bf4c
+		sourceColumn: "Age 64"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 65'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: f27fcb26-f970-445e-a6f1-7e00f154f0e4
+		sourceColumn: "Age 65"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 66'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: ca0bfa11-3a33-4226-9d27-bc29fc452187
+		sourceColumn: "Age 66"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 67'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 519dd170-c013-4205-a212-7226b818e553
+		sourceColumn: "Age 67"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 68'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 10a9404c-4530-49c9-89f0-475dabf18f24
+		sourceColumn: "Age 68"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 69'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 03c74df9-96b3-4c6c-b36d-2bee8a7d92ab
+		sourceColumn: "Age 69"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 70'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 42004012-2f87-436c-a914-e492dbdabb76
+		sourceColumn: "Age 70"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 71'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: ca5ad54f-1ea5-4b71-96f5-3217fc08edbf
+		sourceColumn: "Age 71"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 72'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 4cae38b4-e944-4447-930d-ddf92805997e
+		sourceColumn: "Age 72"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 73'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 434c1034-c8de-48df-99bf-862a8461d0da
+		sourceColumn: "Age 73"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 74'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 39b8084a-1b2c-44de-adc6-26c426121185
+		sourceColumn: "Age 74"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 75'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 647174eb-3635-420d-9460-f2b467a89dcc
+		sourceColumn: "Age 75"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 76'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 6914d9ff-f524-42a6-89fc-53792f28e618
+		sourceColumn: "Age 76"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 77'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: a9c61cac-3507-4147-b8de-b520645ebe09
+		sourceColumn: "Age 77"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 78'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: b795601a-caca-4bfb-9407-14ea4c9c2160
+		sourceColumn: "Age 78"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 79'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 0171ebb7-8b62-4014-ba3c-9afa12b89b7d
+		sourceColumn: "Age 79"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 80'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 1232a71f-85b2-4ef9-87fd-8819c5365014
+		sourceColumn: "Age 80"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 81'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: e2d383c9-6048-43c7-b91e-6be35b79b8f9
+		sourceColumn: "Age 81"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 82'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 8a82c6b8-90fe-48dd-bb5c-31634df5ac62
+		sourceColumn: "Age 82"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 83'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 98a060ae-2899-4d66-9f9d-9e7ca96c4318
+		sourceColumn: "Age 83"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 84'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: d2c1365c-6aa4-4d5b-9997-21bf28d3546d
+		sourceColumn: "Age 84"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 85'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 5285033e-8749-4796-9e68-b017e62d3ed8
+		sourceColumn: "Age 85"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 86'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 13828950-7120-4070-a727-6ac06d1e65a4
+		sourceColumn: "Age 86"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 87'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: c6157310-ac73-43a0-a6f0-7ab796e0c6c5
+		sourceColumn: "Age 87"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 88'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 42cced93-6a36-40c4-8636-8203a3be22f1
+		sourceColumn: "Age 88"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 89'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: e1a8ad1e-fab0-442e-9499-f9d5d1e5e29e
+		sourceColumn: "Age 89"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 90'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 0c52380b-40e7-41f6-a22e-2673287b6755
+		sourceColumn: "Age 90"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 91'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 41c7f423-ef4f-4de6-92f5-732af9693912
+		sourceColumn: "Age 91"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 92'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 6510ee59-2cf8-4576-b72e-f136833092f1
+		sourceColumn: "Age 92"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 93'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 3a8550d5-c390-4780-8606-ecd880ca0442
+		sourceColumn: "Age 93"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 94'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 49bdacc2-111e-4d8a-bf65-179be4d03722
+		sourceColumn: "Age 94"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 95'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 305a053a-28b6-4ef0-9e3f-ef9cf3309c72
+		sourceColumn: "Age 95"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 96'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 5f1fb93c-cc70-4b10-9e5b-fb0e6d69f711
+		sourceColumn: "Age 96"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 97'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 42373239-1d91-447b-8fdb-714300997f65
+		sourceColumn: "Age 97"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 98'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: d0b8f182-77a9-4a29-9eb7-9493de87e83d
+		sourceColumn: "Age 98"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 99'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: e967e578-60a5-4751-b8cd-7a3e4d985f3f
+		sourceColumn: "Age 99"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age 100'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: a6f81244-161a-45fe-b5c8-6dbe18d88223
+		sourceColumn: "Age 100"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

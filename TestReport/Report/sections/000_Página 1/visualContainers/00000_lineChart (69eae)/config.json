@@ -1,0 +1,174 @@
+{
+  "name": "69eaeac7893c608dce80",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 282.63354037267078,
+        "y": 167.25465838509317,
+        "z": 1,
+        "width": 715.52795031055894,
+        "height": 386.38509316770188
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "lineChart",
+    "projections": {
+      "Y": [
+        {
+          "queryRef": "Sum(US Population Estimates.Age 15)"
+        },
+        {
+          "queryRef": "Sum(US Population Estimates.Age 50)"
+        },
+        {
+          "queryRef": "Sum(US Population Estimates.Age 70)"
+        },
+        {
+          "queryRef": "Sum(US Population Estimates.Age 80)"
+        },
+        {
+          "queryRef": "Sum(US Population Estimates.Age 90)"
+        }
+      ],
+      "Category": [
+        {
+          "queryRef": "US Population Estimates.Year",
+          "active": true
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "u",
+          "Entity": "US Population Estimates",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "u"
+              }
+            },
+            "Property": "Year"
+          },
+          "Name": "US Population Estimates.Year",
+          "NativeReferenceName": "Year"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "u"
+                  }
+                },
+                "Property": "Age 50"
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(US Population Estimates.Age 50)",
+          "NativeReferenceName": "Age 50"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "u"
+                  }
+                },
+                "Property": "Age 15"
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(US Population Estimates.Age 15)",
+          "NativeReferenceName": "Age 15"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "u"
+                  }
+                },
+                "Property": "Age 90"
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(US Population Estimates.Age 90)",
+          "NativeReferenceName": "Age 90"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "u"
+                  }
+                },
+                "Property": "Age 80"
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(US Population Estimates.Age 80)",
+          "NativeReferenceName": "Age 80"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "u"
+                  }
+                },
+                "Property": "Age 70"
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(US Population Estimates.Age 70)",
+          "NativeReferenceName": "Age 70"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "u"
+                    }
+                  },
+                  "Property": "Age 15"
+                }
+              },
+              "Function": 0
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "hasDefaultSort": true
+  }
+}

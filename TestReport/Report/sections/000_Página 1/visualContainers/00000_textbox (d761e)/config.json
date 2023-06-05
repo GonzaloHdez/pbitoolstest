@@ -1,0 +1,39 @@
+{
+  "name": "d761e7bb9400e06ecea9",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 499.9751552795031,
+        "y": 37.565217391304344,
+        "z": 0,
+        "width": 279.9503105590062,
+        "height": 50.981366459627331
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "First version. Line charts",
+                    "textStyle": {
+                      "fontSize": "18pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
