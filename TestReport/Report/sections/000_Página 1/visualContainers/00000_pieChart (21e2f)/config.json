@@ -1,0 +1,93 @@
+{
+  "name": "21e2fe4ad17cbe899598",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 371.18012422360249,
+        "y": 139.527950310559,
+        "z": 1,
+        "width": 578.68322981366464,
+        "height": 389.06832298136646
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "pieChart",
+    "projections": {
+      "Y": [
+        {
+          "queryRef": "Sum(US Population Estimates.Total Population)"
+        }
+      ],
+      "Series": [
+        {
+          "queryRef": "US Population Estimates.Race"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "u",
+          "Entity": "US Population Estimates",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "u"
+                  }
+                },
+                "Property": "Total Population"
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(US Population Estimates.Total Population)",
+          "NativeReferenceName": "Total Population"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "u"
+              }
+            },
+            "Property": "Race"
+          },
+          "Name": "US Population Estimates.Race",
+          "NativeReferenceName": "Race"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "u"
+                    }
+                  },
+                  "Property": "Total Population"
+                }
+              },
+              "Function": 0
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "hasDefaultSort": true
+  }
+}

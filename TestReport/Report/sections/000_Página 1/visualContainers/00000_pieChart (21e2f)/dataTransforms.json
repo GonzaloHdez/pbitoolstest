@@ -1,0 +1,124 @@
+{
+  "projectionOrdering": {
+    "Y": [
+      0
+    ],
+    "Series": [
+      1
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "Suma de Total Population",
+        "Name": "Sum(US Population Estimates.Total Population)",
+        "Type": 3,
+        "Format": "0"
+      },
+      {
+        "Restatement": "Race",
+        "Name": "US Population Estimates.Race",
+        "Type": 2048
+      }
+    ],
+    "Filters": [
+      {
+        "type": 2,
+        "expression": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "US Population Estimates"
+                  }
+                },
+                "Property": "Total Population"
+              }
+            },
+            "Function": 0
+          }
+        }
+      },
+      {
+        "type": 0,
+        "expression": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "US Population Estimates"
+              }
+            },
+            "Property": "Race"
+          }
+        }
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Y",
+          "Projection": 0,
+          "isActive": false
+        },
+        {
+          "Name": "Series",
+          "Projection": 1,
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "Suma de Total Population",
+      "format": "0",
+      "queryName": "Sum(US Population Estimates.Total Population)",
+      "roles": {
+        "Y": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 260
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "US Population Estimates"
+                }
+              },
+              "Property": "Total Population"
+            }
+          },
+          "Function": 0
+        }
+      }
+    },
+    {
+      "displayName": "Race",
+      "queryName": "US Population Estimates.Race",
+      "roles": {
+        "Series": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "US Population Estimates"
+            }
+          },
+          "Property": "Race"
+        }
+      }
+    }
+  ]
+}
