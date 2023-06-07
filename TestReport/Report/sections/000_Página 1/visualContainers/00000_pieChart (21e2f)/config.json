@@ -4,26 +4,26 @@
     {
       "id": 0,
       "position": {
-        "x": 371.18012422360249,
-        "y": 139.527950310559,
+        "x": 279.14893617021278,
+        "y": 138.11550151975683,
         "z": 1000,
-        "width": 578.68322981366464,
-        "height": 389.06832298136646
+        "width": 578.72340425531922,
+        "height": 389.05775075987845
       }
     }
   ],
   "singleVisual": {
-    "visualType": "treemap",
+    "visualType": "pieChart",
     "projections": {
-      "Values": [
-        {
-          "queryRef": "Sum(US Population Estimates.Total Population)"
-        }
-      ],
-      "Group": [
+      "Category": [
         {
           "queryRef": "US Population Estimates.Race",
           "active": true
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sum(US Population Estimates.Total Population)"
         }
       ]
     },
@@ -37,6 +37,18 @@
         }
       ],
       "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "u"
+              }
+            },
+            "Property": "Race"
+          },
+          "Name": "US Population Estimates.Race",
+          "NativeReferenceName": "Race"
+        },
         {
           "Aggregation": {
             "Expression": {
@@ -53,18 +65,6 @@
           },
           "Name": "Sum(US Population Estimates.Total Population)",
           "NativeReferenceName": "Total Population"
-        },
-        {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Source": "u"
-              }
-            },
-            "Property": "Race"
-          },
-          "Name": "US Population Estimates.Race",
-          "NativeReferenceName": "Race"
         }
       ],
       "OrderBy": [

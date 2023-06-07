@@ -13,6 +13,18 @@
           ],
           "Select": [
             {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "u"
+                  }
+                },
+                "Property": "Race"
+              },
+              "Name": "US Population Estimates.Race",
+              "NativeReferenceName": "Race"
+            },
+            {
               "Aggregation": {
                 "Expression": {
                   "Column": {
@@ -28,18 +40,6 @@
               },
               "Name": "Sum(US Population Estimates.Total Population)",
               "NativeReferenceName": "Total Population"
-            },
-            {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Source": "u"
-                  }
-                },
-                "Property": "Race"
-              },
-              "Name": "US Population Estimates.Race",
-              "NativeReferenceName": "Race"
             }
           ],
           "OrderBy": [
