@@ -15,6 +15,20 @@
         "name": "SharedResources",
         "type": 2
       }
+    },
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "logozenital9627195267515205.png",
+            "path": "logozenital9627195267515205.png",
+            "type": 100
+          }
+        ],
+        "name": "RegisteredResources",
+        "type": 1
+      }
     }
   ]
 }

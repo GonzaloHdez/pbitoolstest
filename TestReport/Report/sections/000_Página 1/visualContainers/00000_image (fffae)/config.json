@@ -1,0 +1,36 @@
+{
+  "name": "fffae0c8e5dd0b3b53dd",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 917.20364741641345,
+        "y": 0,
+        "z": 1001,
+        "width": 300.54711246200611,
+        "height": 192.58358662613983
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "image",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "imageUrl": {
+              "expr": {
+                "ResourcePackageItem": {
+                  "PackageName": "RegisteredResources",
+                  "PackageType": 1,
+                  "ItemName": "logozenital9627195267515205.png"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
