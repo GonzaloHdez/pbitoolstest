@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 499.9751552795031,
-        "y": 37.565217391304344,
+        "x": 477.56838905775078,
+        "y": 37.933130699088146,
         "z": 0,
-        "width": 279.9503105590062,
-        "height": 50.981366459627331
+        "width": 302.4924012158055,
+        "height": 50.577507598784194
       }
     }
   ],
@@ -23,7 +23,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Second version. Pie chart",
+                    "value": "Third version. Treemap",
                     "textStyle": {
                       "fontSize": "18pt"
                     }

@@ -41,6 +41,26 @@
               "Name": "US Population Estimates.Race",
               "NativeReferenceName": "Race"
             }
+          ],
+          "OrderBy": [
+            {
+              "Direction": 2,
+              "Expression": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "u"
+                        }
+                      },
+                      "Property": "Total Population"
+                    }
+                  },
+                  "Function": 0
+                }
+              }
+            }
           ]
         },
         "Binding": {

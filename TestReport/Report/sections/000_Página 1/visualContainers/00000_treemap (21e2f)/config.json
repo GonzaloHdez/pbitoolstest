@@ -6,23 +6,24 @@
       "position": {
         "x": 371.18012422360249,
         "y": 139.527950310559,
-        "z": 1,
+        "z": 1000,
         "width": 578.68322981366464,
         "height": 389.06832298136646
       }
     }
   ],
   "singleVisual": {
-    "visualType": "pieChart",
+    "visualType": "treemap",
     "projections": {
-      "Y": [
+      "Values": [
         {
           "queryRef": "Sum(US Population Estimates.Total Population)"
         }
       ],
-      "Series": [
+      "Group": [
         {
-          "queryRef": "US Population Estimates.Race"
+          "queryRef": "US Population Estimates.Race",
+          "active": true
         }
       ]
     },
